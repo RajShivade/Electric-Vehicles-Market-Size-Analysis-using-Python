@@ -1,4 +1,4 @@
-# Electric Vehicles Market Size Analysis using Python📊📉📈🐍:-
+# Electric Vehicles Market Size Analysis using Python🚗📊📈🐍:-
 This repository contains a comprehensive analysis of the Electric Vehicles (EV) market, leveraging Python for data handling and visualization. The analysis is performed using various libraries including pandas, seaborn, matplotlib, and numpy. The goal is to uncover insights about EV adoption trends, geographical distribution, vehicle types, manufacturer popularity, and future market growth predictions.
 
 # Analysis Breakdown📊📈: 
