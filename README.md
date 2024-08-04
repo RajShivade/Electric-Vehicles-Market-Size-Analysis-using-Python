@@ -363,4 +363,5 @@ Given the growing trend in actual EV registrations and the projected acceleratio
 So, market size analysis is a crucial aspect of market research that determines the potential sales volume within a given market. It helps businesses understand the magnitude of demand, assess market saturation levels, and identify growth opportunities. From our market size analysis of electric vehicles, we found a promising future for the EV industry, indicating a significant shift in consumer preferences and a potential increase in related investment and business opportunities.
 
 # OutPut:-
+https://github.com/user-attachments/assets/afe9f837-a2e3-459c-89f5-8926f4ad0d24
 
