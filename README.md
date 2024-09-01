@@ -18,7 +18,7 @@ This repository contains a comprehensive analysis of the Electric Vehicles (EV) 
 
 - Analyzes EV registrations across different counties and cities, focusing on the top regions.
 
--Highlights the top cities in the leading counties with bar plots.
+- Highlights the top cities in the leading counties with bar plots.
 
 - **Vehicle Type Distribution:**
 
@@ -62,7 +62,7 @@ import numpy as np
 #Load the dataset
 ev_data = pd.read_csv('Electric_Vehicle_Population_Data.csv')
 
-2. Data Overview
+# 2. Data Overview
 The initial step involves understanding the structure and content of the dataset.
 print(ev_data.head())
 
@@ -105,17 +105,17 @@ plt.show()
 
 - Now, let’s start by selecting the top 3 counties based on EV registrations and then analyze the distribution of EVs within the cities of those counties:
 
-# geographical distribution at county level
+# Geographical distribution at county level
 ev_county_distribution = ev_data['County'].value_counts()
 top_counties = ev_county_distribution.head(3).index
 
-# filtering the dataset for these top counties
+# Filtering the dataset for these top counties
 top_counties_data = ev_data[ev_data['County'].isin(top_counties)]
 
-# analyzing the distribution of EVs within the cities of these top counties
+# Analyzing the distribution of EVs within the cities of these top counties
 ev_city_distribution_top_counties = top_counties_data.groupby(['County', 'City']).size().sort_values(ascending=False).reset_index(name='Number of Vehicles')
 
-# visualize the top 10 cities across these counties
+# Visualize the top 10 cities across these counties
 top_cities = ev_city_distribution_top_counties.head(10)
 
 plt.figure(figsize=(12, 8))
@@ -143,7 +143,7 @@ The number of electric vehicles registered in various cities within three counti
 
 Now Next, let’s explore the types of electric vehicles represented in this dataset. Understanding the breakdown between different EV types, such as Battery Electric Vehicles (BEV) and Plug-in Hybrid Electric Vehicles (PHEV), can provide insights into consumer preferences and the adoption patterns of purely electric vs. hybrid electric solutions. So, let’s visualize the distribution of electric vehicle types to see which categories are most popular among the registered vehicles:
 
-# analyzing the distribution of electric vehicle Types
+# Analyzing the distribution of electric vehicle Types
 ev_type_distribution = ev_data['Electric Vehicle Type'].value_counts()
 
 plt.figure(figsize=(10, 6))
@@ -160,7 +160,7 @@ BEVs are more popular or preferred over PHEVs among the electric vehicles regist
 
 - So, let’s have a look at the most popular manufacturers and then drill down into the most popular models within those manufacturers:
 
-# analyzing the popularity of EV manufacturers.
+# Analyzing the popularity of EV manufacturers.
 ev_make_distribution = ev_data['Make'].value_counts().head(10)  # Limiting to top 10 for clarity
 
 plt.figure(figsize=(12, 6))
@@ -289,15 +289,15 @@ ev_registration_counts
 
 - The dataset provides the number of electric vehicles registered each year from 1997 through 2024. However, the data for 2024 is incomplete as it only contains the data till March. Here’s a summary of EV registrations for recent years:
 
--In 2021, there were 19,063 EVs registered.
+ - In 2021, there were 19,063 EVs registered.
 
--In 2022, the number increased to 27708 EVs.
+ - In 2022, the number increased to 27708 EVs.
 
--In 2023, a significant jump to 57,519 EVs was observed.
+ - In 2023, a significant jump to 57,519 EVs was observed.
 
--For 2024, currently, 7,072 EVs are registered, which suggests partial data.
+ - For 2024, currently, 7,072 EVs are registered, which suggests partial data.
 
--To forecast the total number of EVs expected to be registered in 2024, we can use a growth rate based approach from previous complete years.
+ - To forecast the total number of EVs expected to be registered in 2024, we can use a growth rate based approach from previous complete years.
 
 So We’ll calculate the Compound Annual Growth Rate (CAGR) between a recent year with complete data (2023) and an earlier year to project the 2024 figures. Additionally, using this growth rate, we can estimate the market size for the next five years. Let’s proceed with these calculations:
 
